@@ -19,7 +19,7 @@
 
 #### 5. Energy Surface
 
-- three dimentional surface by $`(\theta_0, \theta_1, J(\theta_0, \theta_1)`$
+- three dimentional surface by $`(\theta_0, \theta_1, J(\theta_0, \theta_1))`$
 
 ![](GradientDescent.gif)
 ![](estimation.gif)
