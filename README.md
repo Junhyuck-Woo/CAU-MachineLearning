@@ -6,3 +6,4 @@ Spring 2020, School of Computer Science and Engineering, College of Software, Ch
 2. Linear Regression
 3. Visualization of Gradient Descent algorithm based on Linear Regression problem
 4. Linear regression with multiple variables
+5. Logistic regression for a binary classification
