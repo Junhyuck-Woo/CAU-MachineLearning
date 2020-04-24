@@ -9,7 +9,7 @@
 #### 2. Logistic regression
 
 - $`\hat{h} = \sigma(z)`$ 
-- $`z = g(x, y; \theta)`$, where $g$ is a high dimensional function and $`\theta \in \mathbb{R}^{k}`$
+- $`z = g(x, y; \theta)`$, where $`g`$ is a high dimensional function and $`\theta \in \mathbb{R}^{k}`$
 - $`\theta = (\theta_{0}, \theta_{1}, \cdots, \theta_{k-1})`$
 - $`g(x, y ; \theta) = \theta_{0} f_{0}(x, y) + \theta_{1} f_{1}(x, y) + \cdots + \theta_{k-1} f_{k-1}(x, y)`$
 - $`f_{k}(x, y)`$ be any high dimensional function of $`x`$ and $`y`$
@@ -84,6 +84,7 @@ _PDF file that is exported from Notebook including codes, comments, and results 
 
 ##### 4. Plot the training accuracy [3pt]
 - plot the training accuracy at every iteration of gradient descent until convergence (in red color)
+- the score will be given depending on the accuracy
 
 ##### 5. Write down the final training accuracy [5pt]
 - present the final training accuracy in number (%) at convergence
@@ -94,6 +95,7 @@ _PDF file that is exported from Notebook including codes, comments, and results 
 - the boundary of the classifier is defined by $`\{ (x, y) \mid \sigma(g(x, y ; \theta)) = 0.5 \} = \{ (x, y) \mid g(x, y ; \theta) = 0 \}`$
 - plot the training data points $`(x, y)`$ with their labels $`l`$ in colors superimposed on the illustration of the classifier (blue for label 0 and red for label 1)
 - you can use `contour` function in python3
+- the score will be given depending on the accuracy
 
 ### 2. Commit History
 
