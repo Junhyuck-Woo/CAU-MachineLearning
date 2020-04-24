@@ -1,4 +1,4 @@
-# Logistic regression for a binary classification using a high dimensional function
+# Logistic regression for a binary classification with a non-linear classification boundary
 
 #### 1. Training Data
 
@@ -9,12 +9,13 @@
 #### 2. Logistic regression
 
 - $`\hat{h} = \sigma(z)`$ 
-- $`z = g(x, y; \theta)`$, where $g$ is a high dimensional function and $`\theta \in \mathbb{R}^{16}`$
-- $`\theta = (\theta_{0}, \theta_{1}, \cdots, \theta_{15})`$
-- $`g(x, y ; \theta) = \theta_{0} f_{0}(x, y) + \theta_{1} f_{1}(x, y) + \cdots + \theta_{15} f_{15}(x, y)`$
-- $`f_{k}(x, y)`$ be any high dimensional function of $`x`$ and $`y`$ for $`k = 0, 1, \cdots, 15`$
+- $`z = g(x, y; \theta)`$, where $g$ is a high dimensional function and $`\theta \in \mathbb{R}^{k}`$
+- $`\theta = (\theta_{0}, \theta_{1}, \cdots, \theta_{k-1})`$
+- $`g(x, y ; \theta) = \theta_{0} f_{0}(x, y) + \theta_{1} f_{1}(x, y) + \cdots + \theta_{k-1} f_{k-1}(x, y)`$
+- $`f_{k}(x, y)`$ be any high dimensional function of $`x`$ and $`y`$
 - $`\sigma(z) = \frac{1}{1 + \exp(-z)}`$
 - $`\sigma^{\prime}(z) = \sigma(z) (1 - \sigma(z))`$
+- the dimension $`k`$ of $`\theta`$ can be 16, but it can be less than that. you can choose $`k`$ for the best performance
 
 #### 3. Objective Function
 
@@ -22,15 +23,15 @@
 
 #### 4. Gradient Descent
 
-- $`\theta_{k}^{(t+1)} \coloneqq \theta_0^{(t)} - \alpha \frac{1}{m} \sum_{i=1}^{m} (\sigma(g(x^{(i)}, y^{(i)}; \theta)) - l^{(i)}) \frac{\partial g(x^{(i)}, y^{(i)}; \theta^{(t)})}{\partial \theta_{k}}`$, for $`k = 0, 1, \cdots, 15`$
+- $`\theta_{k}^{(t+1)} \coloneqq \theta_0^{(t)} - \alpha \frac{1}{m} \sum_{i=1}^{m} (\sigma(g(x^{(i)}, y^{(i)}; \theta)) - l^{(i)}) \frac{\partial g(x^{(i)}, y^{(i)}; \theta^{(t)})}{\partial \theta_{k}}`$, for all $`k`$
 - you should choose a learning rate $`\alpha`$ in such a way that the convergence is achieved
-- you can use any initial conditions $`\theta_k^{(0)}`$ for $`k = 0, 1, \cdots, 15`$
+- you can use any initial conditions $`\theta_k^{(0)}`$ for all $`k`$
  
 #### 5. Training
 
-- find optimal parameters $`\{\theta_k\}_{k = 0}^{15}`$ using the training data
+- find optimal parameters $`\theta`$ using the training data
 
-#### 6. Compute the accuracy
+#### 6. Compute the training accuracy
 
 - the accuracy is computed by $`\frac{\textrm{number of correct predictions}}{\textrm{total number of predictions}}`$
 
@@ -76,7 +77,7 @@ _PDF file that is exported from Notebook including codes, comments, and results 
 - plot the training data points $`(x, y)`$ with their labels $`l`$ in colors (blue for label 0 and red for label 1)
 
 ##### 2. Write down the high dimensional function $`g(x, y; \theta)`$ [2pt]
-- write down the equation for the non-linear function $`g(x, y; \theta)`$ used for the classifier
+- write down the equation for the non-linear function $`g(x, y; \theta)`$ used for the classifier in LaTeX format
 
 ##### 3. Plot the training error [3pt]
 - plot the training error $`J(\theta)`$ at every iteration of gradient descent until convergence (in blue color)
@@ -84,13 +85,14 @@ _PDF file that is exported from Notebook including codes, comments, and results 
 ##### 4. Plot the training accuracy [3pt]
 - plot the training accuracy at every iteration of gradient descent until convergence (in red color)
 
-##### 5. Write down the final training accuracy [2pt]
-- present the final training accuracy at convergence
+##### 5. Write down the final training accuracy [5pt]
+- present the final training accuracy in number (%) at convergence
+- the score will be given depending on the accuracy
 
 ##### 6. Plot the optimal classifier superimposed on the training data [5pt]
-- plot the training data points $`(x, y)`$ with their labels $`l`$ in colors (blue for label 0 and red for label 1)
-- plot the boundary of the optimal classifier at convergence superimposed on the training data points (in green color)
+- plot the boundary of the optimal classifier at convergence (in green color)
 - the boundary of the classifier is defined by $`\{ (x, y) \mid \sigma(g(x, y ; \theta)) = 0.5 \} = \{ (x, y) \mid g(x, y ; \theta) = 0 \}`$
+- plot the training data points $`(x, y)`$ with their labels $`l`$ in colors superimposed on the illustration of the classifier (blue for label 0 and red for label 1)
 - you can use `contour` function in python3
 
 ### 2. Commit History
