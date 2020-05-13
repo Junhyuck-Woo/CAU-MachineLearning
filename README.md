@@ -8,4 +8,4 @@ Spring 2020, School of Computer Science and Engineering, College of Software, Ch
 4. Linear regression with multiple variables
 5. Logistic regression for a binary classification
 6. Logistic regression for a binary classification with a non-linear classification boundary
-7. Logistic Regression for a binary classification with a regularization
+7. Logistic regression for a binary classification with a regularization
