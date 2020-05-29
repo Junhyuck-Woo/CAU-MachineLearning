@@ -10,3 +10,6 @@ Spring 2020, School of Computer Science and Engineering, College of Software, Ch
 6. Logistic regression for a binary classification with a non-linear classification boundary
 7. Logistic regression for a binary classification with a regularization
 8. Forward Propagation in the Neural Networks
+9. Multi-label classification using neural networks
+10. Multi-label classification using neural networks with a regularization
+
